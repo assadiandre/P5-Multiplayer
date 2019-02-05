@@ -28,6 +28,12 @@ io.on('connection', (socket) => {
 		io.sockets.emit('new_user',{id:socket.id, data:data})
 	})
 
+	// once disconnected
+	socket.on("disconnect", (data) => {
+		console.log(socket.id)
+		io.sockets.emit("broadcast_disconnect",{id: socket.id });
+	});
+
 	socket.on('initial_location',(data) => {
 		io.sockets.emit('initial_location',{id:socket.id, data:data})
 	})
