@@ -3,7 +3,7 @@ function Socket_io(player) {
 
 	this.mainPlayer = player
 	this.socketId;
-	this.socket = io.connect('http://localhost:3000', {'forceNew':true});
+	this.socket = io.connect('http://localhost:3000') || io.connect('https://p5-multiplayer.herokuapp.com/') ;
 
 	// once connected
 	this.socket.on("connect",(data) => {
