@@ -25,10 +25,20 @@ function getRandomColor() {
 function draw() {
 	clear();
 	background.display();
+	drawText();
 	player.display();
 	for (const key of Object.keys(alldata)){
 		alldata[key].display();
 	}
+}
+
+function drawText() {
+	textSize(30);
+  	textAlign(CENTER, CENTER);
+  	fill(0);
+  	text('Squares.io', windowWidth/2, 80);
+  	textSize(17);
+  	text('A simple multiplayer game using socket.io + p5.js + node.js by Andre Assadi', windowWidth/2, 130);
 }
 
 function keyPressed() {
